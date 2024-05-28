@@ -84,6 +84,24 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+-- Custom functions
+-- Define a function to focus the terminal window
+function FocusTerminal()
+  local found = false
+  for _, win in pairs(vim.fn.getwininfo()) do
+    if win.terminal == 1 then
+      vim.api.nvim_set_current_win(win.winid)
+      found = true
+      -- Feed the 'i' key to enter insert mode
+      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('i', true, true, true), 'n', false)
+      break
+    end
+  end
+  if not found then
+    print 'No terminal window found'
+  end
+end
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
