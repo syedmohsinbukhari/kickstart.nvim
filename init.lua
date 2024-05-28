@@ -178,6 +178,15 @@ vim.opt.wrap = false
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
+vim.keymap.set(
+  'n',
+  '<leader>th',
+  ':sp<CR>:terminal<CR><C-w>-<C-w>-<C-w>-<C-w>-<C-w>-<C-w>-<C-w>-<C-w>-i',
+  { desc = 'Open [T]erminal, [H]orizontally split.', noremap = true, silent = true }
+)
+
+-- Map <C-`> to focus the terminal window
+vim.api.nvim_set_keymap('n', '<C-`>', ':lua FocusTerminal()<CR>', { noremap = true, silent = true })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
