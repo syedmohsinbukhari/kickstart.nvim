@@ -94,7 +94,7 @@ vim.opt.wrap = false
 --  See `:help vim.keymap.set()`
 vim.keymap.set(
   'n',
-  '<leader>th',
+  '<leader>tH',
   ':sp<CR>:terminal<CR><C-w>-<C-w>-<C-w>-<C-w>-<C-w>-<C-w>-<C-w>-<C-w>-i',
   { desc = 'Open [T]erminal, [H]orizontally split.', noremap = true, silent = true }
 )
