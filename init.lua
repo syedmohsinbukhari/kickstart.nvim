@@ -135,7 +135,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-  pattern = { '*.tf', '*.tfvars' },
+  pattern = { '*.tf', '*.tfvars', '*.py' },
   callback = function()
     vim.lsp.buf.format()
   end,
