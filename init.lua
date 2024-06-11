@@ -100,6 +100,10 @@ vim.keymap.set(
 -- Map <C-`> to focus the terminal window
 vim.api.nvim_set_keymap('n', '<C-`>', ':lua FocusTerminal()<CR>', { noremap = true, silent = true })
 
+-- When navigating half a page up or down, put cursor on the middle line
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Move half a page down and put cursor on the middle line' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Move half a page up and put cursor on the middle line' })
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
