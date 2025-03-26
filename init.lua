@@ -574,7 +574,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 
       local on_attach = function(client, bufnr)
-        if client.name == 'ruff_lsp' then
+        if client.name == 'ruff' then
           -- Disable hover in favor of Pyright
           client.server_capabilities.hoverProvider = false
         end
@@ -607,7 +607,7 @@ require('lazy').setup({
         -- ts_ls = {},
         --
         terraformls = {},
-        ruff_lsp = {
+        ruff = {
           init_options = {
             settings = {
               -- Any extra CLI arguments for `ruff` go here.
